@@ -14,7 +14,7 @@ public class SignUpController {
     private PasswordField SignUpPassword;
 
     @FXML
-    private Button authSigUpButton;
+    private Button authSignUpButton;
 
     @FXML
     private  TextField SignUpLast;
@@ -24,8 +24,9 @@ public class SignUpController {
 
     @FXML
     void initialize(){
-        authSigUpButton.setOnAction(event -> {
+        authSignUpButton.setOnAction(event -> {
             System.out.println("LOG IN button pressed!!!");
+
 
 
         });

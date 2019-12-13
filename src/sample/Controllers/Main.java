@@ -1,4 +1,4 @@
-package sample;
+package sample.Controllers;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,8 +13,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Designs/sample.fxml"));
-        primaryStage.setTitle("LibraryDotBrazz");
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/Designs/sample.fxml"));
+        primaryStage.setTitle("SupaLib");
         primaryStage.setScene(new Scene(root, 700, 400));
         primaryStage.show();
     }
