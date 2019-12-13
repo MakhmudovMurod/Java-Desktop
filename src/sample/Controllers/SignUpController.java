@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import sample.Database.DatabseHandler;
 
 public class SignUpController {
 
@@ -24,9 +25,11 @@ public class SignUpController {
 
     @FXML
     void initialize(){
-        authSignUpButton.setOnAction(event -> {
-            System.out.println("LOG IN button pressed!!!");
+        DatabseHandler dbHandler = new DatabseHandler();
 
+
+        authSignUpButton.setOnAction(event -> {
+dbHandler.signUpUser(SignUpName.getText(),SignUpLast.getText(),SignUpID.getText(),SignUpPassword.getText());
 
 
         });
