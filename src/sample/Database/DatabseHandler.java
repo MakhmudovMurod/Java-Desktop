@@ -19,7 +19,7 @@ public class DatabseHandler extends Configs {
         dbConnection=DriverManager.getConnection(connectionString,dbUser,dbPass);
         return dbConnection;
     }
-    public void signUpUser(String firstName,String lastName,String Password,String Id){
+    public void signUpUser(User user){
         String insert ="INSERT INTO "+ Const.USER_TABLE+"("+ Const.USER_FIRSTNAME+", "+Const.USER_LASTNAME+", "+
                 Const.USER_USERID+", "+Const.USER_PASSWORD+")"+"VALUES(?,?,?,?)";
 
@@ -27,10 +27,10 @@ public class DatabseHandler extends Configs {
 
         try {
             PreparedStatement prSt = getDbConnection().prepareStatement(insert);
-            prSt.setString(1,firstName);
-            prSt.setString(2,lastName);
-            prSt.setString(3,Id);
-            prSt.setString(4,Password);
+            prSt.setString(1,user.getFirstname());
+            prSt.setString(2,user.getLastname());
+            prSt.setString(3,user.getUserId());
+            prSt.setString(4,user.getPassword());
             prSt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

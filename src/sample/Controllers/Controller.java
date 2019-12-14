@@ -23,13 +23,13 @@ public class Controller {
     private Button loginSignUpButton;
 
     @FXML
-    private Button loginSiginButton;
+    private Button loginSignInButton;
 
 
 
     @FXML
     void initialize(){
-        loginSignUpButton.setOnAction(event -> {
+        loginSignInButton.setOnAction(event -> {
             String loginText=login_field.getText().trim();
             String loginPassword=password_field.getText().trim();
 
