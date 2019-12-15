@@ -54,7 +54,7 @@ public class SignUpController extends userExists{
         SignUpBackButton.setOnAction(event -> {
 
             SignUpBackButton.getScene().getWindow().hide();
-            
+
             FXMLLoader loader3=new FXMLLoader();
             loader3.setLocation(getClass().getResource("/sample/Designs/sample.fxml"));
             try{

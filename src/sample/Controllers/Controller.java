@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import sample.Animation.Shake;
 import sample.Database.DatabseHandler;
 import sample.Database.User;
 
@@ -37,9 +38,13 @@ public class Controller {
             String loginText=login_field.getText().trim();
             String loginPassword=password_field.getText().trim();
 
-            if(loginText.equals("") || loginPassword.equals(""))
+            if(loginText.equals("") || loginPassword.equals("")) {
                 System.out.println("Some fields are empty");
-
+                Shake userLoginAnim = new Shake(login_field);
+                Shake passLoginAnim = new Shake(password_field);
+                userLoginAnim.playAnim();
+                passLoginAnim.playAnim();
+            }
             else
             loginUser(loginText,loginPassword);
 
@@ -47,7 +52,6 @@ public class Controller {
         });
        loginSignUpButton.setOnAction(event -> {
 
-           loginSignUpButton.getScene().getWindow().hide();
 
            FXMLLoader loader=new FXMLLoader();
            loader.setLocation(getClass().getResource("/sample/Designs/SignUp.fxml"));
@@ -90,6 +94,10 @@ public class Controller {
         }
         else  System.out.println("There is no User with such ID or Password,please check orthography or get new account!");
 
+        Shake userLoginAnim =new Shake(login_field);
+        Shake passLoginAnim =new Shake(password_field);
+        userLoginAnim.playAnim();
+        passLoginAnim.playAnim();
     }
 
 }
