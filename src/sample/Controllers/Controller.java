@@ -8,8 +8,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import sample.Database.DatabseHandler;
+import sample.Database.User;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Controller {
 
@@ -33,10 +37,12 @@ public class Controller {
             String loginText=login_field.getText().trim();
             String loginPassword=password_field.getText().trim();
 
-            if(!loginText.equals("") && !loginPassword.equals(""))
-                loginUser(loginText,loginPassword);
-            else
+            if(loginText.equals("") || loginPassword.equals(""))
                 System.out.println("Some fields are empty");
+
+            else
+            loginUser(loginText,loginPassword);
+
 
         });
        loginSignUpButton.setOnAction(event -> {
@@ -62,6 +68,27 @@ public class Controller {
     }
 
     private void loginUser(String loginText, String loginPassword) {
+
+        DatabseHandler dbHandler=new DatabseHandler();
+        User user = new User();
+        user.setUserId(loginText);
+        user.setPassword(loginPassword);
+        ResultSet result = dbHandler.getUser(user);
+
+        int counter =0;
+
+        try {
+            while(result.next()){
+            counter++;
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        if (counter>=1){
+            System.out.println("Success!");
+        }
+        else  System.out.println("There is no User with such ID or Password,please check orthography or get new account!");
 
     }
 

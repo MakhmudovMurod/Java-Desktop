@@ -34,6 +34,9 @@ public class SignUpController extends userExists{
     private Button authSignUpButton;
 
     @FXML
+    private Button SignUpBackButton;
+
+    @FXML
     private  TextField SignUpLast;
 
     @FXML
@@ -47,67 +50,92 @@ public class SignUpController extends userExists{
         idCheck.setVisible(false);
         passCheck.setVisible(false);
 
-        userExists ob =new userExists();
+
+        SignUpBackButton.setOnAction(event -> {
+
+            SignUpBackButton.getScene().getWindow().hide();
+            
+            FXMLLoader loader3=new FXMLLoader();
+            loader3.setLocation(getClass().getResource("/sample/Designs/sample.fxml"));
+            try{
+                loader3.load();
+            }
+            catch(IOException e){
+                e.printStackTrace();
+            }
+            Parent root = loader3.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+
+        });
 
 
 
         authSignUpButton.setOnAction(event -> {
 
-            String plus = String.join(SignUpLast.getText(),SignUpName.getText(),SignUpLast.getText());
-            String numOnly = plus.replaceAll("\\p{Alpha}","");
-
 ///-------------------------VALIDATION CHECK!-----------------------
-            if (SignUpName.getText().isEmpty()){
-                //SHOWS WHETHER THE FIELDS ARE EMPTY OR NOT
-                nameCheck.setVisible(true);
-                orNot();
-            }
-            else{
-                nameCheck.setVisible(false);
-                if (SignUpLast.getText().isEmpty()){
-                    //SHOWS WHETHER THE FIELDS ARE EMPTY OR NOT
-                    lastCheck.setVisible(true);
-                    orNot();
-                }
-                else{
-                    lastCheck.setVisible(false);
-
-                    if (SignUpID.getText().isEmpty()){
-                        //SHOWS WHETHER THE FIELDS ARE EMPTY OR NOT
-                        idCheck.setVisible(true);
-                        orNot();
-                    }
-                    else {
-                        idCheck.setVisible(false);
-                        if (SignUpPassword.getText().isEmpty()){
-                            //SHOWS WHETHER THE FIELDS ARE EMPTY OR NOT
-                            passCheck.setVisible(true);
-                            orNot();
-                        }
-                        else {
-                            passCheck.setVisible(false);
-                        }
-                    }
-                }
-            }
-
-            try{
-                double numVal=Double.valueOf(numOnly);
-                System.out.println(plus+"  Contains number!");
-                nameCheck.setVisible(true);
-                lastCheck.setVisible(true);
-
-                orNot2();
-
-            }catch(NumberFormatException e) {
-                System.out.println(plus + "  Doesnt Contain numbers!");
+           if (SignUpPassword.getText().isEmpty()|| SignUpID.getText().isEmpty()|| SignUpLast.getText().isEmpty()
+           ||SignUpName.getText().isEmpty()){
+               if (SignUpName.getText().isEmpty()){
+                   //SHOWS WHETHER THE FIELDS ARE EMPTY OR NOT
+                   nameCheck.setVisible(true);
+                   lastCheck.setVisible(false);
+                   idCheck.setVisible(false);
+                   passCheck.setVisible(false);
+                   orNot();
+               }
+               else{
+                   nameCheck.setVisible(false);
+                   if (SignUpLast.getText().isEmpty()){
+                       //SHOWS WHETHER THE FIELDS ARE EMPTY OR NOT
+                       lastCheck.setVisible(true);
+                       nameCheck.setVisible(false);
+                       idCheck.setVisible(false);
+                       passCheck.setVisible(false);
+                       orNot();
+                   }
+                   else{
+                       lastCheck.setVisible(false);
 
 
+                       if (SignUpID.getText().isEmpty()){
+                           //SHOWS WHETHER THE FIELDS ARE EMPTY OR NOT
+                           idCheck.setVisible(true);
+                           nameCheck.setVisible(false);
+                           lastCheck.setVisible(false);
+                           passCheck.setVisible(false);
+                           orNot();
+                       }
+                       else {
+                           idCheck.setVisible(false);
+                           if (SignUpPassword.getText().isEmpty()){
+                               //SHOWS WHETHER THE FIELDS ARE EMPTY OR NOT
+                               passCheck.setVisible(true);
+                               nameCheck.setVisible(false);
+                               lastCheck.setVisible(false);
+                               idCheck.setVisible(false);
+                               orNot();
+                           }
+                           else {
+                               passCheck.setVisible(false);
+                               NumChecker();
+                           }
+                       }
+                   }
+               }
 
-            }
-            plus=null;
 
+           }
+           else{
+               nameCheck.setVisible(false);
+               lastCheck.setVisible(false);
+               idCheck.setVisible(false);
+               passCheck.setVisible(false);
 
+               NumChecker();
+
+           }
 
 //---------------------------------------------------------------
         });
@@ -154,6 +182,25 @@ public class SignUpController extends userExists{
 
         User user =new User(firstName,lastName,userId,password);
         dbHandler.signUpUser(user);
+    }
+
+    public void NumChecker(){
+        String plus = String.join(SignUpLast.getText(),SignUpName.getText(),SignUpLast.getText());
+        String numOnly = plus.replaceAll("\\p{Alpha}","");
+        try{
+            double numVal=Double.valueOf(numOnly);
+            System.out.println(plus+"  Contains number!");
+            nameCheck.setVisible(true);
+            lastCheck.setVisible(true);
+
+            orNot2();
+
+        }catch(NumberFormatException e) {
+            System.out.println(plus + "  Doesnt Contain numbers!");
+            signUpNewUser();
+        }
+        plus=null;
+
     }
 
 }

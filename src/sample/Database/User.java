@@ -12,6 +12,11 @@ public class User {
         this.userId = userId;
         this.password = password;
     }
+//Constructor:
+    public User() {};
+
+
+    
 
     public String getFirstname() {
         return firstname;

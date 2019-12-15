@@ -36,7 +36,7 @@
                                 <Font name="Segoe UI Black" size="18.0" />
                             </font>
                         </Button>
-                        <TextField fx:id="login_field" layoutX="181.0" layoutY="92.0" prefHeight="31.0" prefWidth="310.0" promptText="Username" style="-fx-border-color: #6e6e6e; -fx-border-width: 5; -fx-border-radius: 20; -fx-background-radius: 77;" />
+                        <TextField fx:id="login_field" layoutX="181.0" layoutY="92.0" prefHeight="31.0" prefWidth="310.0" promptText="User ID" style="-fx-border-color: #6e6e6e; -fx-border-width: 5; -fx-border-radius: 20; -fx-background-radius: 77;" />
                         <PasswordField fx:id="password_field" layoutX="181.0" layoutY="151.0" prefHeight="31.0" prefWidth="310.0" promptText="Password" style="-fx-border-color: #6e6e6e; -fx-border-width: 5; -fx-background-radius: 55; -fx-border-radius: 55;" />
                     </children></AnchorPane>
             <Button fx:id="loginSignUpButton" contentDisplay="CENTER" graphicTextGap="7.0" layoutX="569.0" layoutY="8.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="103.0" style="-fx-background-color: #d6952d; -fx-border-radius: 5; -fx-background-radius: 5; " text="Register" textAlignment="CENTER" textFill="WHITE">

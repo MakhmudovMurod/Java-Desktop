@@ -27,6 +27,11 @@
                   <Circle fx:id="lastCheck" fill="#f85151" layoutX="355.0" layoutY="124.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
                   <Circle fx:id="idCheck" fill="#f85151" layoutX="355.0" layoutY="174.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
                   <Circle fx:id="passCheck" fill="#f85151" layoutX="355.0" layoutY="223.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Button id="SignUpBackButton" fx:id="SignUpBackButton" layoutX="41.0" layoutY="277.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #d6952d;" text="Back" textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font>
+                  </Button>
                     </children></AnchorPane>
                   <Label fx:id="SupalibLogo" alignment="TOP_LEFT" layoutX="47.0" layoutY="14.0" prefHeight="61.0" prefWidth="275.0" text="SUPALib" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
                       <font>
