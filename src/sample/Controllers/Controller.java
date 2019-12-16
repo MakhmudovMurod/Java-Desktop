@@ -34,24 +34,30 @@ public class Controller {
 
     @FXML
     void initialize(){
+
         loginSignInButton.setOnAction(event -> {
             String loginText=login_field.getText().trim();
             String loginPassword=password_field.getText().trim();
 
             if(loginText.equals("") || loginPassword.equals("")) {
-                System.out.println("Some fields are empty");
                 Shake userLoginAnim = new Shake(login_field);
                 Shake passLoginAnim = new Shake(password_field);
                 userLoginAnim.playAnim();
                 passLoginAnim.playAnim();
+                System.out.println("Some fields are empty");
+
+
             }
             else
             loginUser(loginText,loginPassword);
 
 
         });
+
        loginSignUpButton.setOnAction(event -> {
 
+
+           loginSignUpButton.getScene().getWindow().hide();
 
            FXMLLoader loader=new FXMLLoader();
            loader.setLocation(getClass().getResource("/sample/Designs/SignUp.fxml"));
