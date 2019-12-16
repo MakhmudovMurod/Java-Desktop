@@ -160,15 +160,15 @@ public class SignUpController extends userExists{
     }
 
     private void orNot() {
-        FXMLLoader loader2=new FXMLLoader();
-        loader2.setLocation(getClass().getResource("/sample/Designs/UserExists.fxml"));
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(getClass().getResource("/sample/Designs/UserExists.fxml"));
         try{
-            loader2.load();
+            loader.load();
         }
         catch(IOException e){
             e.printStackTrace();
         }
-        Parent root = loader2.getRoot();
+        Parent root = loader.getRoot();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.showAndWait();
@@ -181,6 +181,7 @@ public class SignUpController extends userExists{
         String lastName=SignUpLast.getText();
         String userId=SignUpID.getText();
         String password=SignUpPassword.getText();
+
 
         User user =new User(firstName,lastName,userId,password);
         dbHandler.signUpUser(user);

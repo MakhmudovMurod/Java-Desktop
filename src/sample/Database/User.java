@@ -5,6 +5,8 @@ public class User {
     private String lastname;
     private String userId;
     private String password;
+    private String books;
+
 
     public User(String firstname, String lastname, String userId, String password) {
         this.firstname = firstname;
@@ -49,4 +51,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

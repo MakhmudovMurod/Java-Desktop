@@ -97,6 +97,19 @@ public class Controller {
             }
         if (counter>=1){
             System.out.println("Success!");
+
+            FXMLLoader loader=new FXMLLoader();
+            loader.setLocation(getClass().getResource("/sample/Designs/Library.fxml"));
+            try{
+                loader.load();
+            }
+            catch(IOException e){
+                e.printStackTrace();
+            }
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
         }
         else  System.out.println("There is no User with such ID or Password,please check orthography or get new account!");
 
