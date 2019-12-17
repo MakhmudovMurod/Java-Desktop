@@ -3,13 +3,13 @@ package sample.Controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Accordion;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 
-import javax.swing.table.TableColumn;
-import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LibraryController implements Initializable {
+public class LibraryController{
     @FXML
     public Accordion MenuAcordeon;
     @FXML
@@ -39,8 +39,29 @@ public class LibraryController implements Initializable {
 
 
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+@FXML
+public void initialize() {
+
+        Controller control = new Controller();
+
+//    if (!control.login_field.equals("1122") &&  !control.password_field.equals("admin")) {
+//
+//        ViewUsers.setVisible(false);
+//        ActAddUser.setVisible(false);
+//        ActAddBook.setVisible(false);
+//        ActReturnBook.setVisible(false);
+//
+//
+//
+//    }
+//    else{
+//        ViewUsers.setVisible(true);
+//        ActAddUser.setVisible(true);
+//        ActAddBook.setVisible(true);
+//        ActReturnBook.setVisible(true);
+//
+//    }
+
 
 
     }

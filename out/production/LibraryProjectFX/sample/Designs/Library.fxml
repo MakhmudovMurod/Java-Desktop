@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #d6952d;" minHeight="-Infinity"  maxHeight="-Infinity" maxWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Library">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #d6952d;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.LibraryController">
    <children>
       <AnchorPane layoutX="11.0" layoutY="12.0" prefHeight="578.0" prefWidth="1059.0">
          <children>
@@ -49,7 +49,7 @@
                </font>
             </Button>
          </children></AnchorPane>
-      <TableView layoutX="192.0" layoutY="8.0" prefHeight="578.0" prefWidth="867.0" style="-fx-background-color: #ffecd1;">
+      <TableView fx:id="InfoTable" layoutX="192.0" layoutY="8.0" prefHeight="578.0" prefWidth="867.0" style="-fx-background-color: #ffecd1;">
         <columns>
             <TableColumn fx:id="NameColumn" prefWidth="200.0" text="First Name" />
             <TableColumn fx:id="LastColumn" prefWidth="200.0" text="Last Name" />

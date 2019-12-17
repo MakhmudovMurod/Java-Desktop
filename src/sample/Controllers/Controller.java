@@ -19,16 +19,16 @@ import java.sql.SQLException;
 public class Controller {
 
     @FXML
-    private  TextField login_field;
+    public   TextField login_field;
 
     @FXML
-    private PasswordField password_field;
+    public PasswordField password_field;
 
     @FXML
-    private Button loginSignUpButton;
+    public Button loginSignUpButton;
 
     @FXML
-    private Button loginSignInButton;
+    public Button loginSignInButton;
 
 
 
@@ -48,31 +48,42 @@ public class Controller {
 
 
             }
-            else
-            loginUser(loginText,loginPassword);
+            else {
+                loginUser(loginText, loginPassword);
+//                LibraryController lbControll = new LibraryController();
+//
+//
+//                if (loginPassword != "1122" && loginText != "admin") {
+//
+//                     lbControll.ViewUsers.setVisible(false);
+//                     lbControll.ActAddUser.setVisible(false);
+//                     lbControll.ActAddBook.setVisible(false);
+//                     lbControll.ActReturnBook.setVisible(false);
+//
+//
+//
+//                }
+//                else{
+//                    lbControll.ViewUsers.setVisible(true);
+//                    lbControll.ActAddUser.setVisible(true);
+//                    lbControll.ActAddBook.setVisible(true);
+//                    lbControll.ActReturnBook.setVisible(true);
+//
+//                }
 
-
+            }
         });
 
        loginSignUpButton.setOnAction(event -> {
 
 
-           loginSignUpButton.getScene().getWindow().hide();
-
-           FXMLLoader loader=new FXMLLoader();
-           loader.setLocation(getClass().getResource("/sample/Designs/SignUp.fxml"));
-
-           try{
-               loader.load();
-           }
-           catch(IOException e){
+           try {
+               Main.setScene("/sample/Designs/SignUp.fxml");
+           } catch (IOException e) {
                e.printStackTrace();
            }
 
-           Parent root = loader.getRoot();
-           Stage stage = new Stage();
-           stage.setScene(new Scene(root));
-           stage.showAndWait();
+
         });
 
     }
@@ -98,6 +109,8 @@ public class Controller {
         if (counter>=1){
             System.out.println("Success!");
 
+
+            loginSignInButton.getScene().getWindow().hide();
             FXMLLoader loader=new FXMLLoader();
             loader.setLocation(getClass().getResource("/sample/Designs/Library.fxml"));
             try{

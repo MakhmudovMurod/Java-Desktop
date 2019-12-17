@@ -53,22 +53,14 @@ public class SignUpController extends userExists{
 
         SignUpBackButton.setOnAction(event -> {
 
-//            SignUpBackButton.getScene().getWindow().hide();
-            Stage closeStage=(Stage) SignUpBackButton.getScene().getWindow();
-
-            FXMLLoader loader3=new FXMLLoader();
-            loader3.setLocation(getClass().getResource("/sample/Designs/sample.fxml"));
-            try{
-                loader3.load();
-            }
-            catch(IOException e){
+            try {
+                Main.setScene("/sample/Designs/sample.fxml");
+            } catch (IOException e) {
                 e.printStackTrace();
             }
-            Parent root = loader3.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            closeStage.close();
-            stage.showAndWait();
+
+
+
 
         });
 
