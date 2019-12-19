@@ -6,9 +6,10 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #d6952d;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.LibraryController">
+<AnchorPane  prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #d6952d;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.LibraryController">
    <children>
       <AnchorPane layoutX="11.0" layoutY="12.0" prefHeight="578.0" prefWidth="1059.0">
          <children>
@@ -18,7 +19,7 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #b87e32;">
                            <children>
-                              <Button fx:id="ViewAllBooks" layoutX="4.0" layoutY="14.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="165.0" text="All Books" />
+                              <Button fx:id="ViewAllBooks" layoutX="4.0" layoutY="14.0" mnemonicParsing="false" onAction="#changeTable" prefHeight="31.0" prefWidth="165.0" text="All Books" />
                               <Button fx:id="ViewUsers" layoutX="4.0" layoutY="63.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="165.0" text="Users" />
                               <Button fx:id="ViewIssuedBooks" layoutX="4.0" layoutY="109.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="165.0" text="Issued Books" />
                            </children></AnchorPane>
@@ -48,14 +49,18 @@
                   <Font name="Berlin Sans FB Demi Bold" size="16.0" />
                </font>
             </Button>
+            <Pane fx:id="tableParent" layoutX="303.0" layoutY="422.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.rightAnchor="556.0">
+               <children>
+                  <TableView fx:id="InfoTable" layoutX="-120.0" layoutY="-421.0" prefHeight="578.0" prefWidth="867.0" style="-fx-background-color: #ffecd1;">
+                    <columns>
+                        <TableColumn fx:id="NameColumn" prefWidth="200.0" text="First Name" />
+                        <TableColumn fx:id="LastColumn" prefWidth="200.0" text="Last Name" />
+                        <TableColumn fx:id="IdColumn" prefWidth="181.0" text="ID" />
+                        <TableColumn fx:id="BooksColumn" prefWidth="285.0" text="Books" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
          </children></AnchorPane>
-      <TableView fx:id="InfoTable" layoutX="192.0" layoutY="8.0" prefHeight="578.0" prefWidth="867.0" style="-fx-background-color: #ffecd1;">
-        <columns>
-            <TableColumn fx:id="NameColumn" prefWidth="200.0" text="First Name" />
-            <TableColumn fx:id="LastColumn" prefWidth="200.0" text="Last Name" />
-            <TableColumn fx:id="IdColumn" prefWidth="181.0" text="ID" />
-            <TableColumn fx:id="BooksColumn" prefWidth="285.0" text="Books" />
-        </columns>
-      </TableView>
    </children>
 </AnchorPane>

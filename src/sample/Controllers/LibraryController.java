@@ -1,15 +1,21 @@
 package sample.Controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LibraryController{
+public class LibraryController implements Initializable{
     @FXML
     public Accordion MenuAcordeon;
     @FXML
@@ -42,7 +48,8 @@ public class LibraryController{
 @FXML
 public void initialize() {
 
-        Controller control = new Controller();
+
+//        Controller control = new Controller();
 
 //    if (!control.login_field.equals("1122") &&  !control.password_field.equals("admin")) {
 //
@@ -61,6 +68,28 @@ public void initialize() {
 //        ActReturnBook.setVisible(true);
 //
 //    }
+
+
+
+    }
+
+
+    @FXML
+    private AnchorPane parentPane;
+
+    @FXML private TableView InfoTable;
+    @FXML private Pane tableParent;
+
+
+    @FXML
+    public void changeTable() throws IOException {
+        Parent parent;
+        parent = FXMLLoader.load(getClass().getResource("/sample/Designs/test.fxml"));
+        tableParent.getChildren().setAll(parent);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
 
 
 

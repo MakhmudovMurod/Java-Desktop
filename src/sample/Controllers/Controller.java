@@ -50,10 +50,10 @@ public class Controller {
             }
             else {
                 loginUser(loginText, loginPassword);
-//                LibraryController lbControll = new LibraryController();
-//
-//
-//                if (loginPassword != "1122" && loginText != "admin") {
+                LibraryController lbControll = new LibraryController();
+
+
+//                if (loginPassword.equals("1122")  && loginText.equals("admin") ) {
 //
 //                     lbControll.ViewUsers.setVisible(false);
 //                     lbControll.ActAddUser.setVisible(false);
