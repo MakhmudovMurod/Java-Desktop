@@ -11,8 +11,13 @@ import  java.sql.ResultSet;
 
 public class DatabseHandler extends Configs {
     Connection dbConnection;
+    public static Connection TableConnection()throws SQLException{
+        Connection connection =DriverManager.getConnection("jdbc:mysql://localhost/javalibraryproject","root","1207");
 
-    public Connection getDbConnection()throws ClassNotFoundException,SQLException{
+        return connection;
+    }
+
+    public  Connection getDbConnection()throws ClassNotFoundException,SQLException{
 
         String connectionString="jdbc:mysql://"+dbHost+":"+dbPort+"/"+dbName;
         Class.forName("com.mysql.cj.jdbc.Driver");

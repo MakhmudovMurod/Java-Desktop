@@ -10,12 +10,10 @@
             xmlns:fx="http://javafx.com/fxml"
             prefHeight="400.0" prefWidth="600.0">
 
-    <TableView fx:id="InfoTable" layoutX="-120.0" layoutY="-421.0" prefHeight="578.0" prefWidth="867.0" style="-fx-background-color: #ffecd1;">
+    <TableView fx:id="ParentTable" layoutX="-120.0" layoutY="-421.0" prefHeight="578.0" prefWidth="867.0" style="-fx-background-color: #ffecd1;  ">
         <columns>
-            <TableColumn fx:id="NameColumn2" prefWidth="200.0" text="Ssss" />
-            <TableColumn fx:id="LastColumn2" prefWidth="200.0" text="Boooook" />
-            <TableColumn fx:id="IdColumn2" prefWidth="181.0" text="ID" />
-            <TableColumn fx:id="BooksColumn2" prefWidth="285.0" text="Books" />
+
+            <TableColumn fx:id="BooksColumn" prefWidth="285.0" text="Books" />
         </columns>
     </TableView>
 </AnchorPane>
