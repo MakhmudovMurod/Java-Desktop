@@ -51,6 +51,14 @@ public class SignUpController extends userExists{
         passCheck.setVisible(false);
 
 
+        authSignUpButton.setOnMouseEntered(event -> {
+            authSignUpButton.setStyle("-fx-background-color: #dbaa4f; -fx-border-radius: 20; -fx-background-radius: 55; -fx-border-color: #d19b2e; -fx-border-width: 18;");
+        });
+        authSignUpButton.setOnMouseExited(event -> {
+            authSignUpButton.setStyle("-fx-background-color: #d6952d; -fx-border-radius: 20; -fx-background-radius: 55; -fx-border-color: #d19b2e; -fx-border-width: 18;");
+        });
+
+
         SignUpBackButton.setOnAction(event -> {
 
             try {

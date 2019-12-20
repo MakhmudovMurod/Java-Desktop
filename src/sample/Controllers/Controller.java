@@ -34,6 +34,22 @@ public class Controller {
 
     @FXML
     void initialize(){
+        loginSignInButton.setOnMouseEntered(event -> {
+            loginSignInButton.setStyle("-fx-background-color: #dbaa4f; -fx-background-radius:55; -fx-border-radius:20");
+        });
+        loginSignInButton.setOnMouseExited(event -> {
+            loginSignInButton.setStyle("-fx-background-color:  #d6952d; -fx-background-radius:55; -fx-border-radius:20");
+
+        });
+        loginSignUpButton.setOnMouseEntered(event -> {
+            loginSignUpButton.setStyle("-fx-background-color: #dbaa4f; -fx-border-radius: 5; -fx-background-radius: 5;");
+        });
+        loginSignUpButton.setOnMouseExited(event -> {
+            loginSignUpButton.setStyle("-fx-border-radius: 5; -fx-background-radius: 5; -fx-background-color:  #d6952d;");
+        });
+
+
+
 
         loginSignInButton.setOnAction(event -> {
             String loginText=login_field.getText().trim();
